@@ -1,0 +1,32 @@
+{
+    "projects":[
+        {
+            "id":"1",
+            "name":"Mooviz",
+            "description": "Moowiz is a Netflix clone website. It utilizes TMDB to fetch movies. Users can watch movie trailers, add movies to their watchlist, and search for specific movies they desire.",
+            "techstack": ["react","react","react"],
+            "imageUrl": "Mooviz.webp"
+        },
+        {
+            "id":"2",
+            "name":"PostIT",
+            "description": "PostIT is a facebook clone app. Users here can add posts, comment and like them. The app also includes a global chat feature for users and a friend list functionality.",
+            "techstack": ["react","react","react"],
+            "imageUrl": "Mooviz.webp"
+        },
+        {
+            "id":"3",
+            "name":"ToDo List",
+            "description": "PostIT is a facebook clone app. Users here can add posts, comment and like them. The app also includes a global chat feature for users and a friend list functionality.",
+            "techstack": ["react","react","react"],
+            "imageUrl": "Mooviz.webp"
+        },
+        {
+            "id":"4",
+            "name":"Landmarks Legends",
+            "description": "INFOIANF",
+            "techstack": ["react","react","react"],
+            "imageUrl": "Mooviz.webp"
+        }
+    ]
+}

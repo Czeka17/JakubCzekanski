@@ -14,7 +14,7 @@ function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
 		[key: string]: any; 
 	  };
     const imageMapping:ImageMapping = {
-        "Mooviz.webp": require("../public/images/mooviz.webp")
+        "Mooviz.webp": require("../public/images/mooviz.png")
     }
     const loadImage = (url: string) => {
 		return imageMapping[url] || null; 
@@ -30,10 +30,8 @@ function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
     ))}
    </ul>
     </div>
-    <div className={styles.projectItem__card}>
-         <div className={styles['projectItem__card-info']}><Image className={styles['projectItem__card-image']} src={loadImage(imageUrl)} alt='keanu' /></div>
+         <div><Image className={styles['projectItem__card-image']} src={loadImage(imageUrl)} alt='keanu' /></div>
 </div>
-    </div>
     </div>
 }
 export default ProjectItem;

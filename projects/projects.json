@@ -4,7 +4,7 @@
             "id":"1",
             "name":"Mooviz",
             "description": "Moowiz is a Netflix clone website. It utilizes TMDB to fetch movies. Users can watch movie trailers, add movies to their watchlist, and search for specific movies they desire.",
-            "techstack": ["react","react","react"],
+            "techstack": ["Reactjs","Nextjs","Typescript","TailwindCSS","Mongodb","NextAuth"],
             "imageUrl": "Mooviz.webp"
         },
         {

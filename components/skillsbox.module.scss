@@ -1,11 +1,11 @@
 .skills-box {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  width: 500px;
+  height: 500px;
   overflow: hidden;
   background: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Change to column direction */
   align-items: center;
   justify-content: center;
 }
@@ -18,7 +18,7 @@
   padding: 10px;
   margin: 2em;
   border-radius: 5px;
-  animation-duration: 2s;
+  animation: falling 2s linear infinite; /* Apply animation */
 }
 
 .skill i {
@@ -26,49 +26,13 @@
   font-size: 5rem;
 }
 
-@keyframes fall-React {
+@keyframes falling {
   0% {
-    top: -100px;
+    transform: translateY(-100%);
+    opacity: 0;
   }
   100% {
-    top: calc(100vh - 50px);
+    transform: translateY(100%);
+    opacity: 1;
   }
 }
-
-@keyframes fall-HTML5 {
-  0% {
-    top: -100px;
-  }
-  100% {
-    top: calc(100vh - 50px);
-  }
-}
-
-@keyframes fall-CSS3 {
-  0% {
-    top: -100px;
-  }
-  100% {
-    top: calc(100vh - 50px);
-  }
-}
-
-@keyframes fall-JavaScript {
-  0% {
-    top: -100px;
-  }
-  100% {
-    top: calc(100vh - 50px);
-  }
-}
-
-@keyframes fall-Node {
-  0% {
-    top: -100px;
-  }
-  100% {
-    top: calc(100vh - 50px);
-  }
-}
-
-/* Add more keyframes for additional skills if needed */

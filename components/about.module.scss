@@ -10,10 +10,12 @@
     &__title{
         text-transform: uppercase;
         font-size: 4rem;
+        padding: 0 0.5em; 
     }
     &_text{
         font-size: 1.4rem;
         line-height: 2.8rem;
+        padding: 0 2em; 
     }
 }
 .container{

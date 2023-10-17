@@ -11,15 +11,15 @@
             "id":"2",
             "name":"PostIT",
             "description": "PostIT is a facebook clone app. Users here can add posts, comment and like them. The app also includes a global chat feature for users and a friend list functionality.",
-            "techstack": ["react","react","react"],
-            "imageUrl": "Mooviz.webp"
+            "techstack": ["Reactjs","Redux","Nextjs","Typescript","CSS Modules","Mongodb","NextAuth"],
+            "imageUrl": "PostIt.webp"
         },
         {
             "id":"3",
             "name":"ToDo List",
-            "description": "PostIT is a facebook clone app. Users here can add posts, comment and like them. The app also includes a global chat feature for users and a friend list functionality.",
-            "techstack": ["react","react","react"],
-            "imageUrl": "Mooviz.webp"
+            "description": "This is a straightforward todo list application where users can create, edit, mark tasks as important or completed. Additionally, they have the flexibility to sort their tasks according to their preferences.",
+            "techstack": ["Reactjs","Typescript","CSS Modules"],
+            "imageUrl": "Todo.webp"
         },
         {
             "id":"4",

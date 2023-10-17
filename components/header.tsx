@@ -1,13 +1,74 @@
-import styles from './header.module.scss'
-import keanu from '../public/images/keanu2.png'
-import Image from 'next/image';
-import myImage from '../public/images/me1.png'
-function Header(){
- return <header className={styles.header}>
-    <div className={styles.header__content}>
-    <div><p className={styles['header__content-p']}>Hello, my name is</p><h2 className={styles['header__content-name']}>Jakub Czekański</h2><p  className={styles['header__content-p']}>Aspiring Front-end Developer</p></div>
-
-    </div>
-    </header>
+import styles from "./header.module.scss";
+import { useState } from "react";
+function Header() {
+	const [letterStatus, setLetterStatus] = useState([]);
+	
+	  const handleClick = (letter:string) => {
+		setLetterStatus((prevStatus) => ({
+		  ...prevStatus,
+		  [letter]: true,
+		}));
+	  };
+	return (
+		<header className={styles.header}>
+			<div className={styles.header__content}>
+				<div>
+					<p className={styles["header__content-p"]}>Hello, my name is</p>
+					<h2 className={styles["header__content-name"]}> <span
+              onClick={() => handleClick("1")}
+              className={letterStatus["1"] ? styles.clicked : styles.clickable}
+            >
+            J
+            </span>
+            <span
+              onClick={() => handleClick("2")}
+              className={letterStatus["2"] ? styles.clicked : styles.clickable}
+            >
+              A
+            </span>
+            <span
+              onClick={() => handleClick("3")}
+              className={letterStatus["3"] ? styles.clicked : styles.clickable}
+            >
+              K
+            </span>
+            <span
+              onClick={() => handleClick("4")}
+              className={letterStatus["4"] ? styles.clicked : styles.clickable}
+            >
+              U
+            </span>
+            <span
+              onClick={() => handleClick("5")}
+              className={letterStatus["5"] ? styles.clicked : styles.clickable}
+            >
+              B
+            </span><br/>
+			<span onClick={() => handleClick("6")}
+              className={letterStatus["6"] ? styles.clicked : styles.clickable}>C</span>
+			<span onClick={() => handleClick("7")}
+              className={letterStatus["7"] ? styles.clicked : styles.clickable}>Z</span>
+			<span onClick={() => handleClick("8")}
+              className={letterStatus["8"] ? styles.clicked : styles.clickable}>E</span>
+			<span onClick={() => handleClick("9")}
+              className={letterStatus["9"] ? styles.clicked : styles.clickable}>K</span>
+			<span onClick={() => handleClick("10")}
+              className={letterStatus["10"] ? styles.clicked : styles.clickable}>A</span>
+			<span onClick={() => handleClick("11")}
+              className={letterStatus["11"] ? styles.clicked : styles.clickable}>Ń</span>
+			<span onClick={() => handleClick("12")}
+              className={letterStatus["12"] ? styles.clicked : styles.clickable}>S</span>
+			<span onClick={() => handleClick("13")}
+              className={letterStatus["13"] ? styles.clicked : styles.clickable}>K</span>
+			<span onClick={() => handleClick("14")}
+              className={letterStatus["14"] ? styles.clicked : styles.clickable}>I</span>
+			  </h2>
+					<p className={styles["header__content-p"]}>
+						Aspiring Front-end Developer
+					</p>
+				</div>
+			</div>
+		</header>
+	);
 }
 export default Header;

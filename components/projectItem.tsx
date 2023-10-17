@@ -14,7 +14,9 @@ function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
 		[key: string]: any; 
 	  };
     const imageMapping:ImageMapping = {
-        "Mooviz.webp": require("../public/images/mooviz.png")
+        "Mooviz.webp": require("../public/images/mooviz.png"),
+        "PostIt.webp": require("../public/images/postit.png"),
+        "Todo.webp": require("../public/images/todo.png")
     }
     const loadImage = (url: string) => {
 		return imageMapping[url] || null; 

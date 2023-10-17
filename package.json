@@ -17,6 +17,7 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-pdf": "^7.5.0",
+    "react-svg-loader": "^3.0.3",
     "sass": "^1.69.1",
     "three": "^0.157.0"
   },
@@ -25,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/snapsvg": "^0.5.4",
     "@types/three": "^0.157.0",
     "typescript": "^5"
   }

@@ -1,91 +1,203 @@
-import React, { useEffect, useRef } from 'react';
-import Matter,{
-  Engine,
-  Render,
-  Runner,
-  Bodies,
-  World,
-  Mouse,
-  Vector,
-  MouseConstraint,
-  Events,
-  Constraint,
-} from 'matter-js';
-import Image from 'next/image';
-import {FaBeer, FaReact,FaAmazon} from 'react-icons/fa'
-import {SiReact,SiNextdotjs,SiTypescript} from 'react-icons/si'
-import head from '../public/images/head.png'
+import React, { useEffect, useRef } from "react";
 
+import {
+	SiTypescript,
+	SiJavascript,
+	SiCss3,
+	SiReact,
+	SiRedux,
+	SiPostman,
+	SiNextdotjs,
+	SiHtml5,
+	SiGit,
+	SiNpm,
+	SiSass,
+	SiTailwindcss,
+	SiMongodb,
+	SiFirebase,
+	SiExpo,
+	SiJest,
+} from "react-icons/si";
 
+import VanillaTilt from "vanilla-tilt";
+import styles from "./skillsbox.module.scss";
 
-const PhysicsComponent = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const engine = Engine.create();
-    const render = Render.create({
-      element: canvasRef.current,
-      engine,
-      options: {
-        width: 800,
-        height: 600,
-      },
-    });
-
-    const mouse = Mouse.create(render.canvas);
-    const mouseConstraint = MouseConstraint.create(engine, {
-      mouse,
-      constraint: {
-        stiffness: 0.2,
-        render: {
-          visible: false,
-        },
-      },
-    });
-
-    World.add(engine.world, mouseConstraint);
-
-    // Create and add balls to the Matter.js world
-    const bodies = [
-      ...[...document.querySelectorAll("svg path")].map(path => {
-        const body = Matter.Bodies.fromVertices(
-          100, 80, Matter.Svg.pathToVertices(path), {}, true
-        );
-        Matter.Body.scale(body, 0.2, 0.2);
-        return body;
-      })
-    ];
-    
-    Matter.Composite.add(engine.world, bodies);
-    // Load the SVG path data and convert it to polygons
-
-
-    // Create boundaries to keep balls and the custom SVG body within the canvas
-    const bounds = [
-      Bodies.rectangle(400, 0, 800, 5, { isStatic: true }),
-      Bodies.rectangle(400, 600, 800, 5, { isStatic: true }),
-      Bodies.rectangle(0, 300, 5, 600, { isStatic: true }),
-      Bodies.rectangle(800, 300, 5, 600, { isStatic: true }),
-    ];
-
-    World.add(engine.world, [ ...bounds]);
-
-    const runner = Runner.create();
-
-
-    Runner.run(runner, engine);
-    Render.run(render);
-
-    return () => {
-      Render.stop(render);
-      Runner.stop(runner);
-    };
-  }, []);
-
-  return <div ref={canvasRef}><script src="https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.js"></script>
-   <script src="pathseg.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.js"></script><FaReact size={46}/></div>;
+const SkillsBox = () => {
+	useEffect(() => {
+		VanillaTilt.init(document.querySelectorAll(".card"), {
+			max: 20,
+			speed: 400,
+		});
+	}, []);
+	return (
+		<div className={styles.grid}>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiReact size={48} />
+				<p>Reactjs</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiRedux size={48} />
+				<p>Redux</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiCss3 size={48} />
+				<p>CSS</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiHtml5 size={48} />
+				<p>HTML</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiJavascript size={48} />
+				<p>Javascript</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiTypescript size={48} />
+				<p>Typescript</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiMongodb size={48} />
+				<p>Mongodb</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiSass size={48} />
+				<p>SASS</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiNextdotjs size={48} />
+				<p>Nextjs</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiFirebase size={48} />
+				<p>Firebase</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='0.8'
+				data-tilt-scale='1.1'
+			>
+				<SiTailwindcss size={48} />
+				<p>TailwindCSS</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='1'
+				data-tilt-scale='1.1'
+			>
+				<SiGit size={48} />
+				<p>GIT</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='1'
+				data-tilt-scale='1.1'
+			>
+				<SiReact size={48} />
+				<p>React Native</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='1'
+				data-tilt-scale='1.1'
+			>
+				<SiExpo size={48} />
+				<p>Expo</p>
+			</div>
+			<div
+				className={`card ${styles.card}`}
+				data-tilt
+				data-tilt-reverse='true'
+				data-tilt-glare
+				data-tilt-max-glare='1'
+				data-tilt-scale='1.1'
+			>
+				<SiJest size={48} />
+				<p>JEST</p>
+			</div>
+		</div>
+	);
 };
 
-export default PhysicsComponent;
+export default SkillsBox;

@@ -1,4 +1,3 @@
-import SkillCard from './skillCard';
 import styles from './skills.module.scss'
 import SkillsBox from './skillsbox';
 function Skills(){

@@ -1,38 +1,48 @@
-.skills-box {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  overflow: hidden;
-  background: white;
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 3em;
+}
+.card{
+  width: 100%;
+  height: 100%;
+  padding: 0.5em;
+  background-color: red;
   display: flex;
-  flex-direction: column; /* Change to column direction */
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  border-radius: 1.2em;
+  margin: 1em;
+}
+.card p, .card svg{
+  transform: translateZ(40px)
+}
+.card::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid linear-gradient(45deg,#ff0058, #ffbc00);;
+  background: linear-gradient(45deg, #ffbc00, #ff0058);
+  border-radius: 1.2em;
 }
 
-.skill {
-  display: flex;
-  align-items: center;
-  background-color: #007BFF;
-  color: #fff;
-  padding: 10px;
-  margin: 2em;
-  border-radius: 5px;
-  animation: falling 2s linear infinite; /* Apply animation */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffbc00, #ff0058);
+  filter: blur(30px);
 }
-
-.skill i {
-  margin-right: 5px;
-  font-size: 5rem;
-}
-
-@keyframes falling {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 1;
-  }
+.card p{
+  text-transform: uppercase;
 }

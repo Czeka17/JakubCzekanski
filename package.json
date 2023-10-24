@@ -19,7 +19,8 @@
     "react-pdf": "^7.5.0",
     "react-svg-loader": "^3.0.3",
     "sass": "^1.69.1",
-    "three": "^0.157.0"
+    "three": "^0.157.0",
+    "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {
     "@types/matter-js": "^0.19.1",

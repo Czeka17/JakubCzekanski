@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ProjectItem from './projectItem';
 import projects from '../projects/projects.json'
 function Projects(){
-    const backgroundColors = ['#116D6E', '#321E1E', '#4E3636', '#CD1818'];
+    const backgroundColors = ['#2f2f2f','#434343', '#575757', '#6C6C6C', '#CD1818'];
     
     return <section className={styles.projects}>
            <div className={styles.projects__box}>

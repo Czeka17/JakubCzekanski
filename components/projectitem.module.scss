@@ -52,6 +52,7 @@
             width: 100%;
             height: 100%;
             transition: 0.3s;
+            cursor: pointer;
             &:hover{
                 transform: translateX(-10%) skew(5deg, -5deg) rotateX(15deg) scale(1.1);
             }

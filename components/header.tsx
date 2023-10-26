@@ -1,8 +1,54 @@
+import Image from "next/image";
 import styles from "./header.module.scss";
-import { useState } from "react";
+import me from '../public/images/me1.png'
+import { useState,useEffect,useRef } from "react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
 function Header() {
 	const [letterStatus, setLetterStatus] = useState([]);
-	
+  const [codeText, setCodeText] = useState('');
+  const codeRef = useRef(null);
+
+  const handleCodeClick = () => {
+    codeRef.current.setAttribute('contentEditable', 'true');
+    codeRef.current.focus();
+  };
+
+  const handleCodeBlur = () => {
+    codeRef.current.setAttribute('contentEditable', 'false');
+  };
+ 
+  const fullCode = `
+  <main>
+    <div className={styles.container}>
+      <div className={styles.header__box}>
+        <h2 className={styles["header__box-h2"]}>
+          Hello!
+        </h2>
+      </div>
+      <div className={styles.header__box}>
+        <p className={styles["header__box-text"]}>
+          Welcome to my porfolio page!
+        </p>
+      </div>
+    </div>
+  </main>
+  `;
+  const typingSpeed = 20;
+  useEffect(() => {
+    let index = 0;
+
+    const typeCode = () => {
+      if (index < fullCode.length) {
+        setCodeText((prevText) => prevText + fullCode.charAt(index));
+        index++;
+        setTimeout(typeCode, typingSpeed);
+      }
+    };
+
+    typeCode();
+  }, []);
 	  const handleClick = (letter:string) => {
 		setLetterStatus((prevStatus) => ({
 		  ...prevStatus,
@@ -64,9 +110,18 @@ function Header() {
               className={letterStatus["14"] ? styles.clicked : styles.clickable}>I</span>
 			  </h2>
 					<p className={styles["header__content-p"]}>
-						Aspiring Front-end Developer
+						Aspiring Fullstack Developer
 					</p>
 				</div>
+        <div className={styles["header__content-code"]} ref={codeRef}
+        onClick={handleCodeClick}
+        onBlur={handleCodeBlur}
+        contentEditable={false}>
+        <SyntaxHighlighter language="jsx" style={materialDark} className={styles["transparent-background"]}>
+  {codeText}
+</SyntaxHighlighter>
+
+        </div>
 			</div>
 		</header>
 	);

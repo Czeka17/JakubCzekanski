@@ -3,19 +3,22 @@
     height: 700px;
     display: flex;
     flex-direction: row;
-    background-color: #C69749;
+    background-color: rgb(47, 47, 47);
     justify-content: center;
     position: relative;
     overflow: hidden;
-  
+
     &__content {
       max-width: 1200px;
       width: 100%;
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-around; 
+      justify-content: space-between; 
       margin: 0 auto;
+      &-code{
+        width: 40%;
+      }
       &-p{
         font-size: 1.6rem;
       }
@@ -41,6 +44,11 @@
     cursor: default;
     animation: fall 1s forwards;
   }
+  .transparent-background {
+    background: transparent;
+  }
+
+  
   @keyframes fall{
     0%{
       transform: skew(0) rotate(0);

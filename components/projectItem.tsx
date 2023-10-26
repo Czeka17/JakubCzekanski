@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import styles from './projectitem.module.scss'
-import keanu from '../public/images/keanu.png'
-
+import {useState} from 'react'
+import ReactPlayer from 'react-player';
+import VideoModal from './videoModal';
 interface ProjectItemProps{
     title:string,
     description:string,
@@ -9,7 +10,14 @@ interface ProjectItemProps{
     imageUrl: string;
 }
 function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
     type ImageMapping = {
 		[key: string]: any; 
 	  };
@@ -32,8 +40,11 @@ function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
     ))}
    </ul>
     </div>
-         <div><Image className={styles['projectItem__card-image']} src={loadImage(imageUrl)} alt='keanu' /></div>
+         <div onClick={openModal}><Image className={styles['projectItem__card-image']} src={loadImage(imageUrl)} alt='keanu' /></div>
 </div>
+{isModalOpen && (
+      <VideoModal closeModal={closeModal}/>
+      )}
     </div>
 }
 export default ProjectItem;

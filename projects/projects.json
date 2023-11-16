@@ -23,9 +23,9 @@
         },
         {
             "id":"4",
-            "name":"Landmarks Legends",
-            "description": "INFOIANF",
-            "techstack": ["react","react","react"],
+            "name":"Master Gym",
+            "description": "Master Gym is a landing page for local gym. Users here have main, coach, offer, blog and contact page. I made my own backend with nodejs for this application.",
+            "techstack": ["Typescript","React","Nextjs","Nodejs","Express","Mongoose","Mongodb"],
             "imageUrl": "Mooviz.webp"
         }
     ]

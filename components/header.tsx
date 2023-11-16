@@ -1,22 +1,19 @@
-import Image from "next/image";
 import styles from "./header.module.scss";
-import me from '../public/images/me1.png'
-import { useState,useEffect,useRef } from "react";
+import { useState,useEffect,useRef, RefObject } from "react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 function Header() {
 	const [letterStatus, setLetterStatus] = useState([]);
-  const [codeText, setCodeText] = useState('');
-  const codeRef = useRef(null);
+  const codeRef: RefObject<HTMLDivElement> = useRef(null);
 
   const handleCodeClick = () => {
-    codeRef.current.setAttribute('contentEditable', 'true');
-    codeRef.current.focus();
+    codeRef.current?.setAttribute('contentEditable', 'true');
+    codeRef.current?.focus();
   };
 
   const handleCodeBlur = () => {
-    codeRef.current.setAttribute('contentEditable', 'false');
+    codeRef.current?.setAttribute('contentEditable', 'false');
   };
  
   const fullCode = `
@@ -35,20 +32,7 @@ function Header() {
     </div>
   </main>
   `;
-  const typingSpeed = 20;
-  useEffect(() => {
-    let index = 0;
 
-    const typeCode = () => {
-      if (index < fullCode.length) {
-        setCodeText((prevText) => prevText + fullCode.charAt(index));
-        index++;
-        setTimeout(typeCode, typingSpeed);
-      }
-    };
-
-    typeCode();
-  }, []);
 	  const handleClick = (letter:string) => {
 		setLetterStatus((prevStatus) => ({
 		  ...prevStatus,
@@ -118,7 +102,7 @@ function Header() {
         onBlur={handleCodeBlur}
         contentEditable={false}>
         <SyntaxHighlighter language="jsx" style={materialDark} className={styles["transparent-background"]}>
-  {codeText}
+  {fullCode}
 </SyntaxHighlighter>
 
         </div>

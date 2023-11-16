@@ -23,4 +23,5 @@ body {
   color: white;
   margin: 0 auto;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }

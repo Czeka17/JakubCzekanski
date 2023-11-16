@@ -1,5 +1,7 @@
 import MainNavigation from "@/components/MainNavigation";
 import About from "@/components/about";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
@@ -11,7 +13,8 @@ return <main>
    <About/>
    <Skills/>
    <Projects/>
-   <div style={{height:'100vh'}}></div>
+   <Contact/>
+   <Footer/>
 </main>
 }
 export default Home;

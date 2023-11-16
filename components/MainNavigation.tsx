@@ -30,27 +30,27 @@ function MainNavigation(){
    {isOpen && <div className={styles.mobilenav__content}>
       <ul>
         <li onClick={() => setOpen(false)}>
-          <a href="#signup">
+          <a href="#about">
             ABOUT
           </a>
         </li>
         <li onClick={() => setOpen(false)}>
-          <a href="#login">
+          <a href="#skills">
             SKILLS
           </a>
         </li>
         <li onClick={() => setOpen(false)}>
-          <a href="#A">
+          <a href="#projects">
             PROJECTS
           </a>
         </li>
         <li onClick={() => setOpen(false)}>
-          <a href="#A">
+          <a href="#contact">
             CONTACT
           </a>
         </li>
         <li onClick={() => setOpen(false)}>
-        <a href="/pdf.pdf" target="_blank">RESUME</a>a
+        <a href="/pdf.pdf" target="_blank">RESUME</a>
         </li>
       </ul>
     </div>}
@@ -65,28 +65,27 @@ function MainNavigation(){
       </ul>
       <ul>
         <li>
-          <a href="#signup">
+          <a href="#about">
             ABOUT
           </a>
         </li>
         <li>
-          <a href="#login">
+          <a href="#skills">
             SKILLS
           </a>
         </li>
         <li>
-          <a href="#A">
+          <a href="#projects">
             PROJECTS
           </a>
         </li>
         <li>
-          <a href="#A">
+          <a href="#contact">
             CONTACT
           </a>
         </li>
         <li>
-        <a href="/pdf.pdf" target="_blank">RESUME</a>
-                
+        <a href="/pdf.pdf" target="_blank">RESUME</a>         
         </li>
       </ul>
     </div>

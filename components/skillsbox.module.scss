@@ -1,6 +1,6 @@
 .grid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 3em;
 }
@@ -15,7 +15,6 @@
   transform-style: preserve-3d;
   transform: perspective(1000px);
   border-radius: 1.2em;
-  margin: 1em;
 }
 .card p, .card svg{
   transform: translateZ(60px)
@@ -44,4 +43,13 @@
 }
 .card p{
   text-transform: uppercase;
+}
+
+@media(min-width:992px){
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 3em;
+  }
 }

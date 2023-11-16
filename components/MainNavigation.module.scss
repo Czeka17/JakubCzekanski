@@ -13,8 +13,9 @@
   width: 100%;
   & a{
     text-decoration: none;
-    color: #232323;
+    color: white;
     transition: color 0.3s ease;
+    z-index: 1000;
     &:hover{
         color: #00C6A7;
     }
@@ -56,6 +57,7 @@
         top: 0;
         right: 0;
         z-index: 99;
+        padding: 1em;
       }
       &__content{
         position: fixed;
@@ -64,7 +66,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        background: green;
+        background: #474747;
         color: white;
         z-index: 1;
         & ul{

@@ -1,5 +1,6 @@
 .header {
     width: 100vw;
+    padding: 3em 1em;
     height: 700px;
     display: flex;
     flex-direction: row;
@@ -18,6 +19,7 @@
       margin: 0 auto;
       &-code{
         width: 40%;
+        padding: 1em;
       }
       &-p{
         font-size: 1.6rem;
@@ -74,6 +76,9 @@
           font-size: 3rem;
           line-height: 3rem;
           text-align: center;
+        }
+        &-code{
+          width: 100%;
         }
       }
     }

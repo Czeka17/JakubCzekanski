@@ -1,6 +1,6 @@
 .header {
     width: 100vw;
-    padding: 3em 1em;
+    padding: 3em 0;
     height: 700px;
     display: flex;
     flex-direction: row;
@@ -50,6 +50,189 @@
     background: transparent;
   }
 
+  .line{
+    position: absolute;
+    top:-10%;
+    left:40%;
+    width: 5px;
+    height: 250px;
+    background-color: black;
+    animation: wifi-shake2 2s infinite ease-in-out alternate;
+  }
+  .line2{
+    position: absolute;
+    top:-25%;
+    left:70%;
+    width: 5px;
+    height: 350px;
+    background-color: black;
+    animation: wifi-shake 3s infinite ease-in-out alternate;
+    
+  }
+  .bulb{
+    position: absolute;
+    top:100%;
+    left:-550%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    svg{
+      position: absolute;
+      top: 0;
+      left:50%;
+      fill: gray;
+      font-size: 2rem;
+      transform:translateX(-50%) rotate(180deg);
+      z-index: -1;
+    }
+  }
+  .bul{
+    position: absolute;
+    top:100%;
+    left:-550%;
+    width: 60px;
+    height: 60px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    svg{
+      position: absolute;
+      top: 0;
+      left:50%;
+      fill: gray;
+      font-size: 2rem;
+      transform:translateX(-50%) rotate(180deg);
+    }
+    
+  }
+  .light{
+    position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+      filter: blur(70px);
+      
+  }
+
+  .pullchain{ 
+    position: absolute;
+    top: -10%;
+    right: 10%;
+    width: 15px;
+    height: 250px;
+    cursor: pointer;
+}
+.chain {
+  border-left: 2px dotted white;
+  height: 350px;
+}
+
+.handle {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: relative;
+  left: -6.5px;
+}
+.chainAnimation {
+  animation: chainAnimation 1s ease;
+}
+.destroyAnimation{
+  background: transparent;
+  border: 1px solid gray;
+  animation: destroy 1s 1s forwards;
+}
+@keyframes destroy{
+ 0%{
+  top:100%;
+  }
+  100%{
+    top:250%;
+    opacity: 0;
+  }
+}
+@keyframes chainAnimation {
+  0%, 100% {
+    top: -10%;
+  }
+  50% {
+    top: -5%;
+  }
+}
+
+
+
+  @keyframes wifi-shake {
+    0% {
+      -webkit-transform: rotate(15deg);
+              transform: rotate(15deg);
+    }
+    100% {
+      -webkit-transform: rotate(-15deg);
+              transform: rotate(-15deg);
+    }
+  }
+  @keyframes wifi-shake2 {
+    0% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+    100% {
+      -webkit-transform: rotate(-5deg);
+              transform: rotate(-5deg);
+    }
+  }
+  .turn{
+    animation: flash 3s forwards;
+  }
+  .turn2{
+    animation: turnon 3s forwards
+  }
+  .turnoff{
+    animation: turnoff 1s forwards
+  }
+  .destroyed{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 5px;
+    background: gray;
+    &::after{
+      position:absolute;
+      content:"";
+      top: -65%;
+      left:-16%;
+      transform: translate(-50%,-50%) rotate(45deg);
+      width: 20px;
+      height: 5px;
+      border-bottom-right-radius: 30%;
+      background: gray;
+    }
+    &::before{
+      position:absolute;
+      content:"";
+      top: 170%;
+      left:116%;
+      transform: translate(-50%,-50%) rotate(45deg);
+      width: 20px;
+      height: 5px;
+      border-bottom-left-radius: 30%;
+      background: gray;
+    }
+  }
   
   @keyframes fall{
     0%{
@@ -64,10 +247,56 @@
     }
   }
 
+  .floatingSvg{
+    position: absolute;
+    bottom:10%;
+    left:40%;
+    color: rgba(255,255,255,0.6);
+    animation: float 30s infinite
+  }
+  .floatingSvg2{
+    position: absolute;
+    bottom:20%;
+    left:40%;
+    color: rgba(255,255,255,0.6);
+    animation: float2 40s infinite
+  }
+
+  @keyframes float{
+    0%{
+      left:40%;
+      transform: rotate(10deg);
+    }
+    50%{
+      left:10%;
+      transform: rotate(360deg);
+    }
+    100%{
+      left:40%;
+      transform: rotate(10deg);
+    }
+  }
+  @keyframes float2{
+    0%{
+      left:40%;
+      transform: rotate(10deg);
+    }
+    50%{
+      left:70%;
+      transform: rotate(360deg);
+    }
+    100%{
+      left:40%;
+      transform: rotate(10deg);
+    }
+  }
+
   @media only screen and (max-width: 991px) { 
     .header{
       &__content{
-        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &-p{
           font-size: 1rem;
           text-align: center;
@@ -81,5 +310,134 @@
           width: 100%;
         }
       }
+    }
+    .line{
+      left:20%;
+    }
+  }
+
+  @keyframes turnoff{
+    0%{
+      background: white;
+    }
+    100%{
+      background: transparent;
+    }
+  }
+
+  @keyframes turnon{
+    0%{
+      background: transparent;
+    }
+    100%{
+      background: white;
+    }
+  }
+
+  @keyframes flash{
+    0%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    1%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    1.001%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    10%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    11.001%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    11.002%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    12%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    
+    39.999%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    40%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    41%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    41.001%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+
+    
+    75%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    75.5%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    75.501%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+
+    
+    80%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    81.001%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    81.002%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    82%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    82.001%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    82.002%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    83%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    83.001%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    83.002%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
+    }
+    83.003%{
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0px 0px 0px 0px transparent;
+    }
+    88%{
+      background: white;
+      box-shadow: 0px 0px 150px 75px white;
     }
   }

@@ -1,37 +1,27 @@
 import styles from "./header.module.scss";
 import { useState,useEffect,useRef, RefObject } from "react";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import {FaCode, FaLightbulb} from 'react-icons/fa'
+import { RiComputerFill } from "react-icons/ri";
 
 function Header() {
 	const [letterStatus, setLetterStatus] = useState([]);
-  const codeRef: RefObject<HTMLDivElement> = useRef(null);
+  const [light,setLight] = useState(true)
+  const [animateChain, setAnimateChain] = useState(false);
+  const [destroyLight, setDestroyLight] = useState([]);
 
-  const handleCodeClick = () => {
-    codeRef.current?.setAttribute('contentEditable', 'true');
-    codeRef.current?.focus();
-  };
-
-  const handleCodeBlur = () => {
-    codeRef.current?.setAttribute('contentEditable', 'false');
-  };
- 
-  const fullCode = `
-  <main>
-    <div className={styles.container}>
-      <div className={styles.header__box}>
-        <h2 className={styles["header__box-h2"]}>
-          Hello!
-        </h2>
-      </div>
-      <div className={styles.header__box}>
-        <p className={styles["header__box-text"]}>
-          Welcome to my porfolio page!
-        </p>
-      </div>
-    </div>
-  </main>
-  `;
+  function destroyLightHandler(light:string){
+    setDestroyLight((prevLights) => ({
+      ...prevLights,
+      [light]:true,
+    }))
+  }
+  const handleLightSwitch = () => {
+     setLight(prevState => !prevState)
+     setAnimateChain(true);
+     setTimeout(() => {
+       setAnimateChain(false);
+     }, 2000);
+  }
 
 	  const handleClick = (letter:string) => {
 		setLetterStatus((prevStatus) => ({
@@ -97,15 +87,24 @@ function Header() {
 						Aspiring Fullstack Developer
 					</p>
 				</div>
-        <div className={styles["header__content-code"]} ref={codeRef}
-        onClick={handleCodeClick}
-        onBlur={handleCodeBlur}
-        contentEditable={false}>
-        <SyntaxHighlighter language="jsx" style={materialDark} className={styles["transparent-background"]}>
-  {fullCode}
-</SyntaxHighlighter>
-
+    
+        <div className={styles.line}>
+          {!destroyLight["1"] ? <div className={`${light ? styles.bulb : styles.bul} ${light ? styles.turn : styles.turnoff}`} onClick={() => destroyLightHandler("1")}><FaLightbulb/>{light && <div className={styles.light}></div>}</div>: <div className={`${light ? styles.bulb : styles.bul} ${styles.destroyAnimation}`}><FaLightbulb/>{light && <div className={styles.light}></div>}<div className={styles.destroyed}></div></div>}
         </div>
+        <div className={styles.line2}>
+          {!destroyLight["2"] ? <div className={`${light ? styles.bulb : styles.bul} ${light ? styles.turn2 : styles.turnoff}`} onClick={() => destroyLightHandler("2")}><FaLightbulb/>{light && <div className={styles.light}></div>}</div> : <div className={`${light ? styles.bulb : styles.bul} ${destroyLight ? styles.destroyAnimation : ""}`}><FaLightbulb/>{light && <div className={styles.light}></div>}<div className={styles.destroyed}></div></div>}
+        </div>
+        <div
+          className={`${styles.pullchain} ${
+            light ? styles.chainOn : ''
+          } ${animateChain ? styles.chainAnimation : ''}`}
+          onClick={handleLightSwitch}
+        >
+    <div className={styles.chain}></div>
+    <div className={styles.handle}></div>
+</div>
+<div className={styles.floatingSvg}><RiComputerFill size={36}/></div>
+<div className={styles.floatingSvg2}><FaCode size={48}/></div>
 			</div>
 		</header>
 	);

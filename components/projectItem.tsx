@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import styles from './projectitem.module.scss'
 import {useState} from 'react'
-import ReactPlayer from 'react-player';
 import VideoModal from './videoModal';
 interface ProjectItemProps{
     title:string,
     description:string,
     techstack:string[],
     imageUrl: string;
+    videoUrl: string;
 }
-function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
+function ProjectItem({title,description,techstack,imageUrl,videoUrl}:ProjectItemProps){
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -24,7 +24,8 @@ function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
     const imageMapping:ImageMapping = {
         "Mooviz.webp": require("../public/images/mooviz.png"),
         "PostIt.webp": require("../public/images/postit.png"),
-        "Todo.webp": require("../public/images/todo.png")
+        "Todo.webp": require("../public/images/todo.png"),
+        "master-gym.png": require("../public/images/master-gym.png"),
     }
     const loadImage = (url: string) => {
 		return imageMapping[url] || null; 
@@ -42,8 +43,9 @@ function ProjectItem({title,description,techstack,imageUrl}:ProjectItemProps){
     </div>
          <div onClick={openModal}><Image className={styles['projectItem__card-image']} src={loadImage(imageUrl)} alt='keanu' /></div>
 </div>
+<div className={styles.projectItem__buttons}><button>Code</button><button>Live</button></div>
 {isModalOpen && (
-      <VideoModal closeModal={closeModal}/>
+      <VideoModal closeModal={closeModal} videoUrl={videoUrl}/>
       )}
     </div>
 }

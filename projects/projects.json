@@ -5,28 +5,32 @@
             "name":"Mooviz",
             "description": "Moowiz is a Netflix clone website. It utilizes TMDB to fetch movies. Users can watch movie trailers, add movies to their watchlist, and search for specific movies they desire.",
             "techstack": ["Reactjs","Nextjs","Typescript","TailwindCSS","Mongodb","NextAuth"],
-            "imageUrl": "Mooviz.webp"
+            "imageUrl": "Mooviz.webp",
+            "videoUrl":"/mooviz.mp4"
         },
         {
             "id":"2",
             "name":"PostIT",
             "description": "PostIT is a facebook clone app. Users here can add posts, comment and like them. The app also includes a global chat feature for users and a friend list functionality.",
             "techstack": ["Reactjs","Redux","Nextjs","Typescript","CSS Modules","Mongodb","NextAuth"],
-            "imageUrl": "PostIt.webp"
+            "imageUrl": "PostIt.webp",
+            "videoUrl":"/postit.mp4"
         },
         {
             "id":"3",
             "name":"ToDo List",
             "description": "This is a straightforward todo list application where users can create, edit, mark tasks as important or completed. Additionally, they have the flexibility to sort their tasks according to their preferences.",
             "techstack": ["Reactjs","Typescript","CSS Modules"],
-            "imageUrl": "Todo.webp"
+            "imageUrl": "Todo.webp",
+            "videoUrl":"/todolist.mp4"
         },
         {
             "id":"4",
             "name":"Master Gym",
             "description": "Master Gym is a landing page for local gym. Users here have main, coach, offer, blog and contact page. I made my own backend with nodejs for this application.",
             "techstack": ["Typescript","React","Nextjs","Nodejs","Express","Mongoose","Mongodb"],
-            "imageUrl": "Mooviz.webp"
+            "imageUrl": "master-gym.png",
+            "videoUrl":"/master-gym.mp4"
         }
     ]
 }

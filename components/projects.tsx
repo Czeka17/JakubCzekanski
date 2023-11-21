@@ -22,6 +22,7 @@ function Projects(){
                 description={project.description}
                 techstack={project.techstack}
                 imageUrl={project.imageUrl}
+                videoUrl={project.videoUrl}
               />
             </div>
           );

@@ -4,17 +4,26 @@
             "id":"1",
             "name":"Mooviz",
             "description": "Moowiz is a Netflix clone website. It utilizes TMDB to fetch movies. Users can watch movie trailers, add movies to their watchlist, and search for specific movies they desire.",
-            "techstack": ["Reactjs","Nextjs","Typescript","TailwindCSS","Mongodb","NextAuth"],
+            "techstack": ["Reactjs","Nextjs","Typescript","TailwindCSS","Mongodb"],
             "imageUrl": "Mooviz.webp",
-            "videoUrl":"/mooviz.mp4"
+            "videoUrl":"/mooviz.mp4",
+            "codeUrl": "https://github.com/Czeka17/netflix-clone",
+            "liveUrl": "https://netflix-clone-fawn-sigma.vercel.app",
+            "email": "test@test.pl",
+            "password": "test123"
         },
         {
             "id":"2",
             "name":"PostIT",
             "description": "PostIT is a facebook clone app. Users here can add posts, comment and like them. The app also includes a global chat feature for users and a friend list functionality.",
-            "techstack": ["Reactjs","Redux","Nextjs","Typescript","CSS Modules","Mongodb","NextAuth"],
+            "techstack": ["Reactjs","Redux","Nextjs",
+            "Typescript","CSS Modules","Mongodb"],
             "imageUrl": "PostIt.webp",
-            "videoUrl":"/postit.mp4"
+            "videoUrl":"/postit.mp4",
+            "codeUrl": "https://github.com/Czeka17/Facebook-clone",
+            "liveUrl": "https://facebook-clone-nine-chi.vercel.app",
+            "email": "test",
+            "password": "test123"
         },
         {
             "id":"3",
@@ -22,15 +31,19 @@
             "description": "This is a straightforward todo list application where users can create, edit, mark tasks as important or completed. Additionally, they have the flexibility to sort their tasks according to their preferences.",
             "techstack": ["Reactjs","Typescript","CSS Modules"],
             "imageUrl": "Todo.webp",
-            "videoUrl":"/todolist.mp4"
+            "videoUrl":"/todolist.mp4",
+            "codeUrl": "https://github.com/Czeka17/TodoList",
+            "liveUrl": "https://todo-list-three-orcin-43.vercel.app"
         },
         {
             "id":"4",
             "name":"Master Gym",
             "description": "Master Gym is a landing page for local gym. Users here have main, coach, offer, blog and contact page. I made my own backend with nodejs for this application.",
-            "techstack": ["Typescript","React","Nextjs","Nodejs","Express","Mongoose","Mongodb"],
+            "techstack": ["Typescript","Reactjs","Nextjs","Nodejs","Express","Mongoose","Mongodb"],
             "imageUrl": "master-gym.png",
-            "videoUrl":"/master-gym.mp4"
+            "videoUrl":"/master-gym.mp4",
+            "codeUrl": "https://github.com/Czeka17/Master-Gym",
+            "liveUrl": "https://master-gym-din1.vercel.app"
         }
     ]
 }

@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef,useState } from "react";
+import { useDrag, useDrop } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
 import {
 	SiTypescript,
 	SiJavascript,
@@ -10,7 +12,6 @@ import {
 	SiNextdotjs,
 	SiHtml5,
 	SiGit,
-	SiNpm,
 	SiSass,
 	SiTailwindcss,
 	SiMongodb,
@@ -25,247 +26,56 @@ import {
 
 import VanillaTilt from "vanilla-tilt";
 import styles from "./skillsbox.module.scss";
+import Skill from "./skill";
 
-const SkillsBox = () => {
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-		  const cards = document.querySelectorAll(".card");
-	
-		  cards.forEach((card) => {
-			VanillaTilt.init(card as HTMLElement, {
-			  max: 20,
-			  speed: 400,
-			});
-		  });
-		}
-	  }, []);
-	  
-	return (
-		<div className={styles.grid}>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiHtml5 size={48} />
-				<p>HTML</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiCss3 size={48} />
-				<p>CSS</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiSass size={48} />
-				<p>SASS</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiJavascript size={48} />
-				<p>Javascript</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiTypescript size={48} />
-				<p>Typescript</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiReact size={48} />
-				<p>Reactjs</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiReact size={48} />
-				<p>React Native</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiRedux size={48} />
-				<p>Redux</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiNextdotjs size={48} />
-				<p>Nextjs</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiExpo size={48} />
-				<p>Expo</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiNodedotjs size={48} />
-				<p>NODE.JS</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiMongodb size={48} />
-				<p>Mongodb</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiMongoose size={48} />
-				<p>Mongoose</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiExpress size={48} />
-				<p>Express</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiFirebase size={48} />
-				<p>Firebase</p>
-			</div>
-			
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiJest size={48} />
-				<p>JEST</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiPostman size={48} />
-				<p>postman</p>
-			</div>
-			
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='0.8'
-				data-tilt-scale='1.15'
-			>
-				<SiTailwindcss size={48} />
-				<p>TailwindCSS</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiBootstrap size={48} />
-				<p>bootstrap</p>
-			</div>
-			<div
-				className={`card ${styles.card}`}
-				data-tilt
-				data-tilt-reverse='true'
-				data-tilt-glare
-				data-tilt-max-glare='1'
-				data-tilt-scale='1.15'
-			>
-				<SiGit size={48} />
-				<p>GIT</p>
-			</div>
-		</div>
-	);
+function SkillsBox(){
+const skills = [
+    { icon: SiHtml5, label: "HTML" },
+    { icon: SiCss3, label: "CSS" },
+    { icon: SiSass, label: "SASS" },
+	{ icon: SiJavascript, label: "JAVASCRIPT"},
+	{ icon: SiTypescript, label:"TYPESCRIPT"},
+	{ icon: SiReact, label: "REACT"},
+	{ icon: SiReact, label: "REACT NATIVE"},
+{ icon: SiRedux, label: "REDUX"},
+{ icon: SiNextdotjs, label: "NEXTJS"},
+{ icon: SiExpo, label: "EXPO"},
+{ icon: SiNodedotjs, label: "NODEJS"},
+{ icon: SiMongodb, label: "MONGODB"},
+{ icon: SiMongoose, label: "MONGOOSE"},
+{ icon: SiExpress, label: "EXPRESS"},
+{ icon: SiFirebase, label: "FIREBASE"},
+{ icon: SiJest, label: "JEST"},
+{ icon: SiPostman, label: "POSTMAN"},
+{ icon: SiTailwindcss, label: "TAILWINDCSS"},
+{ icon: SiBootstrap, label: "BOOTSTRAP"},
+    { icon: SiGit, label: "GIT" },
+  ];
+
+  const [items, setItems] = useState(skills);
+
+  const moveCard = (fromIndex:number, toIndex:number) => {
+    const updatedItems = [...items];
+    const [movedItem] = updatedItems.splice(fromIndex, 1);
+    updatedItems.splice(toIndex, 0, movedItem);
+    setItems(updatedItems);
+  };
+
+  return (
+    <DndProvider backend={HTML5Backend}>
+      <div className={styles.grid}>
+        {items.map((skill, index) => (
+          <Skill
+            key={index}
+            index={index}
+            icon={skill.icon}
+            label={skill.label}
+            moveCard={moveCard}
+          />
+        ))}
+      </div>
+    </DndProvider>
+  );
 };
 
 export default SkillsBox;

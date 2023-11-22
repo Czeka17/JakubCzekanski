@@ -23,6 +23,8 @@ function Projects(){
                 techstack={project.techstack}
                 imageUrl={project.imageUrl}
                 videoUrl={project.videoUrl}
+                codeUrl={project.codeUrl}
+                liveUrl={project.liveUrl}
               />
             </div>
           );

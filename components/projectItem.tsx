@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './projectitem.module.scss'
 import {useState} from 'react'
 import VideoModal from './videoModal';
-import {SiCss3, SiCssmodules, SiExpress, SiMongodb, SiMongoose, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript} from 'react-icons/si';
+import {SiCss3, SiExpress, SiMongodb, SiMongoose, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript} from 'react-icons/si';
 interface ProjectItemProps{
     title:string,
     description:string,

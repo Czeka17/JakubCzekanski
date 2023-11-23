@@ -18,6 +18,10 @@
         padding: 3em;
         margin: 1em;
         border-radius: 10px;
+        text-align: center;
+        span{
+            font-weight: bold;
+        }
     }
     &__form{
         display: flex;

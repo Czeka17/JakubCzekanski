@@ -1,5 +1,5 @@
 import styles from "./header.module.scss";
-import { useState,useEffect,useRef, RefObject } from "react";
+import { useState} from "react";
 import {FaCode, FaLightbulb} from 'react-icons/fa'
 import { RiComputerFill } from "react-icons/ri";
 
@@ -89,10 +89,10 @@ function Header() {
 				</div>
     
         <div className={styles.line}>
-          {!destroyLight["1"] ? <div className={`${light ? styles.bulb : styles.bul} ${light ? styles.turn : styles.turnoff}`} onClick={() => destroyLightHandler("1")}><FaLightbulb/>{light && <div className={styles.light}></div>}</div>: <div className={`${light ? styles.bulb : styles.bul} ${styles.destroyAnimation}`}><FaLightbulb/>{light && <div className={styles.light}></div>}<div className={styles.destroyed}></div></div>}
+          {!destroyLight["1"] ? <div className={`${light ? styles.bulb : styles.bulboff} ${light ? styles.turn : styles.turnoff}`} onClick={() => destroyLightHandler("1")}><FaLightbulb/>{light && <div className={styles.light}></div>}</div>: <div className={`${light ? styles.bulb : styles.bulboff} ${styles.destroyAnimation}`}><FaLightbulb/>{light && <div className={styles.light}></div>}<div className={styles.destroyed}></div></div>}
         </div>
         <div className={styles.line2}>
-          {!destroyLight["2"] ? <div className={`${light ? styles.bulb : styles.bul} ${light ? styles.turn2 : styles.turnoff}`} onClick={() => destroyLightHandler("2")}><FaLightbulb/>{light && <div className={styles.light}></div>}</div> : <div className={`${light ? styles.bulb : styles.bul} ${destroyLight ? styles.destroyAnimation : ""}`}><FaLightbulb/>{light && <div className={styles.light}></div>}<div className={styles.destroyed}></div></div>}
+          {!destroyLight["2"] ? <div className={`${light ? styles.bulb : styles.bulboff} ${light ? styles.turn2 : styles.turnoff}`} onClick={() => destroyLightHandler("2")}><FaLightbulb/>{light && <div className={styles.light}></div>}</div> : <div className={`${light ? styles.bulb : styles.bulboff} ${destroyLight ? styles.destroyAnimation : ""}`}><FaLightbulb/>{light && <div className={styles.light}></div>}<div className={styles.destroyed}></div></div>}
         </div>
         <div
           className={`${styles.pullchain} ${

@@ -1,5 +1,4 @@
-import React, { useEffect, useRef,useState } from "react";
-import { useDrag, useDrop } from "react-dnd";
+import React, {useState } from "react";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
 import {
@@ -23,8 +22,6 @@ import {
 	SiBootstrap,
 	SiMongoose
 } from "react-icons/si";
-
-import VanillaTilt from "vanilla-tilt";
 import styles from "./skillsbox.module.scss";
 import Skill from "./skill";
 

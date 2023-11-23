@@ -1,6 +1,4 @@
 import styles from './projects.module.scss'
-import keanu from '../public/images/keanu.png'
-import Image from 'next/image';
 import ProjectItem from './projectItem';
 import projects from '../projects/projects.json'
 function Projects(){

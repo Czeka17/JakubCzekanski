@@ -17,10 +17,6 @@
       align-items: center;
       justify-content: space-between; 
       margin: 0 auto;
-      &-code{
-        width: 40%;
-        padding: 1em;
-      }
       &-p{
         font-size: 1.6rem;
       }
@@ -45,9 +41,6 @@
   .clicked {
     cursor: default;
     animation: fall 1s forwards;
-  }
-  .transparent-background {
-    background: transparent;
   }
 
   .line{
@@ -88,7 +81,7 @@
       z-index: -1;
     }
   }
-  .bul{
+  .bulboff{
     position: absolute;
     top:100%;
     left:-550%;
@@ -305,9 +298,6 @@
           font-size: 3rem;
           line-height: 3rem;
           text-align: center;
-        }
-        &-code{
-          width: 100%;
         }
       }
     }

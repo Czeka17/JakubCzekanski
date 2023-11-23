@@ -50,12 +50,7 @@ const Skill: React.FC<SkillProps> = ({ icon, index, label, moveCard }) => {
   return (
     <div
       ref={ref}
-      className={`card ${styles.card}`}
-      style={{
-        transform: `translate(${isDragging ? 0 : 0}px, ${
-          isDragging ? 0 : 0
-        }px)`,
-      }}
+      className={`card ${styles.card} ${isDragging ? styles.drag : ""}`}
       data-tilt
       data-tilt-reverse="true"
       data-tilt-glare

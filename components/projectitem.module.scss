@@ -1,6 +1,5 @@
 .projectItem{
     &__box{
-        width: 100%;
         &__item{
             display: flex;
             flex-direction: row;
@@ -15,7 +14,7 @@
             height: 100%;
             transition: 0.3s;
             cursor: pointer;
-            padding: 0 0.5em;
+            padding:  0.5em;
             &:hover{
                 transform: translateX(-10%) skew(5deg, -5deg) rotateX(15deg) scale(1.1);
             }
@@ -24,22 +23,49 @@
        &__buttons{
         width: 100%;
         margin: 1em;
+        padding: 1em 0;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        button{
-            padding: 1em 2em;
-            background: transparent;
-            color: white;
-            border: 1px solid white;
-            cursor: pointer;
-            transition: 0.3s all;
-            &:hover{
-                color: black;
-                background:white;
 
-            }
+        button {
+          font-size: 18px;
+          color: rgba(255,255,255,0.7);
+          font-weight: 800;
+          cursor: pointer;
+          position: relative;
+          border: none;
+          background: none;
+          text-transform: uppercase;
+          transition: 0.3s all;
         }
+        
+        button:focus,
+        button:hover {
+          color: white;
+          transform: scale(1.1);
+        }
+        
+        button:focus:after,
+        button:hover:after {
+          width: 100%;
+          left: 0%;
+        }
+        
+        button:after {
+          content: "";
+          pointer-events: none;
+          bottom: -2px;
+          left: 50%;
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          background-color: white;
+          transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition-duration: 400ms;
+          transition-property: width, left;
+        }
+           
        }
 }
 .ballscontainer{
@@ -62,7 +88,7 @@
     margin: 1em;
     border: 1px solid gray;
     cursor: pointer;
-    transition:all 1s;
+    transition:all 0.3s;
     &:hover{
         background: rgb(47, 47, 47);
     }
@@ -123,58 +149,86 @@
   @keyframes jump{
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
+        border-bottom-left-radius: 30%;
+        border-bottom-right-radius: 30%;
       }
   
       40% {
         transform: translateY(-20%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
   
       60% {
         transform: translateY(-10%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
 }
 @keyframes jump2{
     0%, 30%,50%, 100% {
         transform: translateY(0);
+        border-bottom-left-radius: 35%;
+        border-bottom-right-radius: 35%;
       }
   
       40% {
         transform: translateY(-10%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
   
       75% {
         transform: translateY(-30%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
 }
 @keyframes jump3{
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
+        border-bottom-left-radius: 25%;
+        border-bottom-right-radius: 25%;
       }
   
       30% {
         transform: translateY(-30%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
   
       70% {
         transform: translateY(-20%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
 }
 @keyframes jump4{
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
+        border-bottom-left-radius: 32%;
+        border-bottom-right-radius: 32%;
       }
   
       10% {
         transform: translateY(-10%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
   
       40% {
         transform: translateY(-10%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
       60% {
         transform: translateY(-10%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
       90% {
         transform: translateY(-10%);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
 }

@@ -15,7 +15,7 @@
   transform-style: preserve-3d;
   transform: perspective(1000px);
   border-radius: 1.2em;
-  cursor: pointer;
+  cursor: grab;
 }
 .card p, .card svg{
   transform: translateZ(60px)
@@ -45,7 +45,6 @@
 .card p{
   text-transform: uppercase;
 }
-
 
 @media(min-width:300px) {
     .grid {

@@ -39,9 +39,13 @@ function Contact(){
           [e.target.name]: e.target.value,
         });
       };
-    return <section className={styles.contact}>
+    return <section className={styles.contact} id='contact'>
             <h2 className={styles.contact__title}>Contact</h2>
         <div className={styles.contact__box}>
+        <p>
+        Thank you for visiting! Feel free to reach out to me using the form
+        below or by sending an email to <span>jczekanski123@gmail.com</span>.
+      </p>
             <form className={styles.contact__form} onSubmit={handleSubmit}>
             <div className={styles['contact__form-input']} >
             <input type='text' name='name' id='name' required value={formData.name} onChange={handleChange} />

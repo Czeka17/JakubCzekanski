@@ -6,6 +6,9 @@
     flex-direction: column;
     margin: 0 auto;
     padding: 3em 0;
+    hr{
+        margin: 2em 0;
+    }
     &__title{
         text-transform: uppercase;
         font-size: 2.5rem;
@@ -123,6 +126,8 @@
                 border:1px solid white;
                 cursor: pointer;
                 transition:all 0.3s ;
+                text-transform: uppercase;
+                font-weight: bold;
                 &:hover{
                     color: #474747;
                     border: 1px solid #474747;
@@ -132,7 +137,21 @@
         }
     }
 }
+.fade-enter {
+    opacity: 0;
+  }
 
+  .fade-enter-active {
+    opacity: 1;
+  }
+
+  .fade-exit {
+    opacity: 1;
+  }
+
+  .fade-exit-active {
+    opacity: 0;
+  }
 @media(min-width:992px){
     .contact{
         &__title{

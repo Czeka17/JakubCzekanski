@@ -45,8 +45,6 @@ const skills = [
 { icon: SiJest, label: "JEST"},
 { icon: SiPostman, label: "POSTMAN"},
 { icon: SiTailwindcss, label: "TAILWINDCSS"},
-{ icon: SiBootstrap, label: "BOOTSTRAP"},
-    { icon: SiGit, label: "GIT" },
   ];
 
   const [items, setItems] = useState(skills);

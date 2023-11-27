@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import styles from './projectitem.module.scss'
 import {useState} from 'react'
-import VideoModal from './videoModal';
+import Modal from './Modal';
 import {SiCss3, SiExpress, SiMongodb, SiMongoose, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript} from 'react-icons/si';
+import { CSSTransition } from 'react-transition-group';
 interface ProjectItemProps{
     title:string,
     description:string,
@@ -71,13 +72,9 @@ function ProjectItem({title,description,techstack,imageUrl,videoUrl,codeUrl,live
     <div>
     <h3>{title}</h3>
      <p>{description}</p>
-   <ul>
-   {techstack.map((item,index) => (
-        <li key={index}>{item}</li>
-    ))}
-   </ul>
+
     </div>
-         <div onClick={openModal}><Image className={styles['projectItem__card-image']} src={loadImage(imageUrl)} alt='Preview of project' /></div>
+         <div onClick={openModal} style={{display:"flex",justifyContent:"center", alignItems:"center", padding:"1em"}}><Image className={styles['projectItem__card-image']} src={loadImage(imageUrl)} alt='Preview of project' /></div>
 </div>
 <div className={styles.ballscontainer}>
 {iconComponents.map((iconComponent, index) => (
@@ -88,9 +85,7 @@ function ProjectItem({title,description,techstack,imageUrl,videoUrl,codeUrl,live
         ))}
 </div>
 <div className={styles.projectItem__buttons}><a target='_blank' href={codeUrl}><button>Code</button></a><a href={liveUrl} target='_blank'><button>Live</button></a></div>
-{isModalOpen && (
-      <VideoModal closeModal={closeModal} videoUrl={videoUrl}/>
-      )}
+      {isModalOpen && <Modal showModal={isModalOpen} closeModal={closeModal} videoUrl={videoUrl}/>}
     </div>
 }
 export default ProjectItem;

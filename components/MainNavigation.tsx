@@ -1,7 +1,7 @@
 import styles from './MainNavigation.module.scss'
 import { useEffect, useState } from 'react';
 import Hamburger from 'hamburger-react';
-
+import { FaCode } from "react-icons/fa";
 function MainNavigation(){
 
   const [scrolling,setScrolling] = useState(false)
@@ -57,7 +57,7 @@ function MainNavigation(){
    </div>
   
     <a href="#" className={styles['menu-container__content-logo']}>
-      JC
+      JC<FaCode/>
     </a>
 
     <div className={styles.menu}>

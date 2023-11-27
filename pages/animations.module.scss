@@ -1,0 +1,19 @@
+
+.loading-screen {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .app-content {
+    opacity: 0;
+    transition: opacity 0.6s ease-in;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  

@@ -37,12 +37,18 @@ function Contact(){
                 setMessage('Email has been sent!')
                 setShowModal(true)
                 setIsLoading(false)
+                setFormData({name: '',
+                email: '',
+                message: ''})
               })
               .catch((error) => {
                 setTitle('Oops...')
                 setMessage('Something went wrong. please try again later.')
                 setShowModal(true)
                 setIsLoading(false)
+                setFormData({name: '',
+                email: '',
+                message: ''})
               });
         
         } catch (error) {

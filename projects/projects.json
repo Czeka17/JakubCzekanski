@@ -29,7 +29,7 @@
             "id":"3",
             "name":"ToDo List",
             "description": "This is a straightforward todo list application where users can create, edit, mark tasks as important or completed. Additionally, they have the flexibility to sort their tasks according to their preferences.",
-            "techstack": ["Reactjs","Typescript","CSS Modules"],
+            "techstack": ["Reactjs","Typescript","CSS Modules","Jest"],
             "imageUrl": "Todo.webp",
             "videoUrl":"/todolist.mp4",
             "codeUrl": "https://github.com/Czeka17/TodoList",

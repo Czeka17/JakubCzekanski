@@ -31,7 +31,11 @@
         &-logo{
             line-height: 0;
             margin: 0 20px;
-
+            display: flex;
+            align-items: center;
+            svg{
+              margin: 0 0.3em;
+            }
         }
       }
   }
@@ -69,6 +73,7 @@
         background: #474747;
         color: white;
         z-index: 1;
+        animation: 0.3s ease-in NavSlide;
         & ul{
           display: flex;
           align-items: center;
@@ -105,8 +110,7 @@
       padding: 75px 50px 50px;
       background: #cdcdcd;
       -webkit-font-smoothing: antialiased;
-      transform-origin: 0% 0%;
-      transform: translateX(0%);
+
       transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     }
   
@@ -176,3 +180,13 @@
     animation: slideOutToRight 0.3s;
     animation-fill-mode: forwards;
   }
+  @keyframes NavSlide{
+    0%{
+        opacity: 0;
+        transform: translate(0%,-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-50%,-50%);
+    }
+}

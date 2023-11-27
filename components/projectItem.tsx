@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './projectitem.module.scss'
 import {useState} from 'react'
 import Modal from './Modal';
-import {SiCss3, SiExpress, SiMongodb, SiMongoose, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript} from 'react-icons/si';
+import {SiCss3, SiExpress, SiJest, SiMongodb, SiMongoose, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript} from 'react-icons/si';
 import { CSSTransition } from 'react-transition-group';
 interface ProjectItemProps{
     title:string,
@@ -42,7 +42,8 @@ function ProjectItem({title,description,techstack,imageUrl,videoUrl,codeUrl,live
     "CSS Modules": <SiCss3/>,
     Nodejs: <SiNodedotjs/>,
     Express: <SiExpress/>,
-    Mongoose: <SiMongoose/>
+    Mongoose: <SiMongoose/>,
+    Jest: <SiJest/>
 
   };
   const iconComponents = techstack.map((icon, index) => {

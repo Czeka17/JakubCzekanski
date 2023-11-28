@@ -1,5 +1,6 @@
 import styles from './about.module.scss'
 function About(){
+    
     return <section className={styles.about} id='about'>
         <div className={styles.container}>
             <h2 className={styles.about__title}>About</h2>

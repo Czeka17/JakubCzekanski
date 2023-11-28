@@ -19,7 +19,6 @@ import {
 	SiJest,
 	SiNodedotjs,
 	SiExpress,
-	SiBootstrap,
 	SiMongoose
 } from "react-icons/si";
 import styles from "./skillsbox.module.scss";

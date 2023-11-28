@@ -1,5 +1,3 @@
-// _app.tsx
-
 import { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import FontFaceObserver from 'fontfaceobserver';
@@ -9,7 +7,6 @@ import styles from './animations.module.scss';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const [appLoading, setAppLoading] = useState(true);
-  const [loadingBarProgress, setLoadingBarProgress] = useState(0);
   const [delayedTransition, setDelayedTransition] = useState(false);
 
   useEffect(() => {
@@ -33,13 +30,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
     const fetchData = async () => {
       try {
-        const totalSteps = 100;
-        const stepDuration = 20;
-
-        for (let step = 0; step <= totalSteps; step++) {
-          setLoadingBarProgress((step / totalSteps) * 100);
-          await new Promise((resolve) => setTimeout(resolve, stepDuration));
-        }
         await loadFonts();
       } catch (error) {
         console.error('Error loading data:', error);

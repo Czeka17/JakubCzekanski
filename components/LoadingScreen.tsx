@@ -1,4 +1,3 @@
-// LoadingScreen.tsx
 import React, { useEffect } from 'react';
 import { FaCode } from 'react-icons/fa';
 import styles from './LoadingScreen.module.scss'

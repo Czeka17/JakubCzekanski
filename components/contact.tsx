@@ -30,6 +30,13 @@ function Contact(){
             from_email: formData.email,
             message: formData.message,
           };
+          if(formData.name === '' || formData.email === '' || !formData.email.includes("@") || formData.message === '' ){
+            setTitle("Error!")
+            setMessage("Invalid inputs")
+            setShowModal(true)
+                setIsLoading(false)
+          }
+          else{
         try {
             emailjs.send(`${process.env.NEXT_PUBLIC_SERVICE_KEY}`, `${process.env.NEXT_PUBLIC_TEMPLATE_KEY}`, templateParams)
             .then((response) => {
@@ -61,6 +68,7 @@ function Contact(){
                 email: '',
                 message: ''})
         }
+      }
       };
       const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -89,7 +97,7 @@ function Contact(){
             <textarea rows={5} id='message' name='message' required value={formData.message} onChange={handleChange}></textarea>
             <span>Message</span>
             </div>
-            <div className={styles['contact__form-button']}><button disabled={isLoading}>{isLoading ? 'Loading' : 'Submit'}</button></div>
+            <div className={styles['contact__form-button']}><button disabled={isLoading}>{isLoading ? 'Sending' : 'Submit'}</button></div>
             </form>
         </div>
         {showModal && <Modal closeModal={hideModalHandler} title={title} message={message} showModal={showModal} />}

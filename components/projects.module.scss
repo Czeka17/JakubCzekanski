@@ -1,26 +1,26 @@
-.projects{
-    height: 100%;
-    padding: 3em 0;
-    &__box{
-        width: 100%;
-        padding: 3em 0;
-    }
-    &__title{
-        text-transform: uppercase;
-        font-size: 4rem;
-        padding: 0 0.5em;
-        margin: 0 auto;
-        max-width: 1000px;
-    }
+.projects {
+	height: 100%;
+	padding: 3em 0;
+	&__box {
+		width: 100%;
+		padding: 3em 0;
+	}
+	&__title {
+		text-transform: uppercase;
+		font-size: 4rem;
+		padding: 0 0.5em;
+		margin: 0 auto;
+		max-width: 1000px;
+		
+		font-weight: bold;
+	}
 }
 
-   
-
-@media(max-width:992px){
-    .projects{
-        &__title{
-            font-size: 2.5rem;
-            line-height: 4rem;
-        }
-    }
+@media (max-width: 992px) {
+	.projects {
+		&__title {
+			font-size: 2.5rem;
+			line-height: 4rem;
+		}
+	}
 }

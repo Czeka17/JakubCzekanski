@@ -43,7 +43,7 @@
             "imageUrl": "master-gym.png",
             "videoUrl":"/master-gym.mp4",
             "codeUrl": "https://github.com/Czeka17/Master-Gym",
-            "liveUrl": "https://master-gym-din1.vercel.app"
+            "liveUrl": "https://master-gym.vercel.app"
         }
     ]
 }

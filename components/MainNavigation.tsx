@@ -30,15 +30,16 @@ function MainNavigation(){
    {isOpen && <div className={styles.mobilenav__content}>
       <ul>
         <li onClick={() => setOpen(false)}>
+          <a href="#home">
+            HOME
+          </a>
+        </li>
+        <li onClick={() => setOpen(false)}>
           <a href="#about">
             ABOUT
           </a>
         </li>
-        <li onClick={() => setOpen(false)}>
-          <a href="#skills">
-            SKILLS
-          </a>
-        </li>
+       
         <li onClick={() => setOpen(false)}>
           <a href="#projects">
             PROJECTS
@@ -49,9 +50,7 @@ function MainNavigation(){
             CONTACT
           </a>
         </li>
-        <li onClick={() => setOpen(false)}>
-        <a href="/pdf.pdf" target="_blank">RESUME</a>
-        </li>
+        
       </ul>
     </div>}
    </div>
@@ -65,13 +64,13 @@ function MainNavigation(){
       </ul>
       <ul>
         <li>
-          <a href="#about">
-            ABOUT
+          <a href="#home">
+            HOME
           </a>
         </li>
         <li>
-          <a href="#skills">
-            SKILLS
+          <a href="#about">
+            ABOUT
           </a>
         </li>
         <li>
@@ -83,9 +82,6 @@ function MainNavigation(){
           <a href="#contact">
             CONTACT
           </a>
-        </li>
-        <li>
-        <a href="/pdf.pdf" target="_blank">RESUME</a>         
         </li>
       </ul>
     </div>

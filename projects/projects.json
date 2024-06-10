@@ -2,48 +2,31 @@
     "projects":[
         {
             "id":"1",
-            "name":"Mooviz",
-            "description": "Moowiz is a Netflix clone website. It utilizes TMDB to fetch movies. Users can watch movie trailers, add movies to their watchlist, and search for specific movies they desire.",
-            "techstack": ["Reactjs","Nextjs","Typescript","TailwindCSS","Mongodb"],
+            "name":"Cycling Coach Page",
+            "description": "This page is dedicated to cycling coach Konrad Czekański, featuring about, offer, contact, and social media sections. Designed to connect with potential clients and showcase Konrad's expertise.",
             "imageUrl": "Mooviz.webp",
-            "videoUrl":"/mooviz.mp4",
-            "codeUrl": "https://github.com/Czeka17/netflix-clone",
-            "liveUrl": "https://netflix-clone-fawn-sigma.vercel.app",
-            "email": "test@test.pl",
-            "password": "test123"
+            "liveUrl": "https://bike-trainer-landing-page.vercel.app"
         },
         {
             "id":"2",
-            "name":"PostIT",
-            "description": "PostIT is a facebook clone app. Users here can add posts, comment and like them. The app also includes a global chat feature for users and a friend list functionality.",
-            "techstack": ["Reactjs","Redux","Nextjs",
-            "Typescript","CSS Modules","Mongodb"],
+            "name":"Master Gym",
+            "description": "Master Gym is a landing page for a local gym, featuring sections on Home, Coach, Services, Blog, and Contact. This page serves as a showcase for both the gym and its trainer, providing users with all the information they need about the gym's offerings and how to get in touch.",
             "imageUrl": "PostIt.webp",
-            "videoUrl":"/postit.mp4",
-            "codeUrl": "https://github.com/Czeka17/Facebook-clone",
-            "liveUrl": "https://facebook-clone-nine-chi.vercel.app",
-            "email": "test",
-            "password": "test123"
+            "liveUrl": "https://master-gym.vercel.app"
         },
         {
             "id":"3",
-            "name":"ToDo List",
-            "description": "This is a straightforward todo list application where users can create, edit, mark tasks as important or completed. Additionally, they have the flexibility to sort their tasks according to their preferences.",
-            "techstack": ["Reactjs","Typescript","CSS Modules","Jest"],
+            "name":"Truck Transport Page",
+            "description": "This landing page is dedicated to showcasing the work of truck company, highlighting  services and providing a seamless way for visitors to get in touch with us.",
             "imageUrl": "Todo.webp",
-            "videoUrl":"/todolist.mp4",
-            "codeUrl": "https://github.com/Czeka17/TodoList",
-            "liveUrl": "https://todo-list-three-orcin-43.vercel.app"
+            "liveUrl": "https://truck-transport-lading-page.vercel.app"
         },
         {
             "id":"4",
-            "name":"Master Gym",
-            "description": "Master Gym is a landing page for local gym. Users here have main, coach, offer, blog and contact page. I made my own backend with nodejs for this application.",
-            "techstack": ["Typescript","Reactjs","Nextjs","Nodejs","Express","Mongoose","Mongodb"],
+            "name":"Freelancer Page",
+            "description": "This freelancer page is designed to showcase my work, connect with potential clients, and continually develop my craft.",
             "imageUrl": "master-gym.png",
-            "videoUrl":"/master-gym.mp4",
-            "codeUrl": "https://github.com/Czeka17/Master-Gym",
-            "liveUrl": "https://master-gym-din1.vercel.app"
+            "liveUrl": "https://jakub-czekanski-5jtp.vercel.app"
         }
     ]
 }

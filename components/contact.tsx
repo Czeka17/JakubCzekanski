@@ -76,7 +76,7 @@ function Contact(){
           [e.target.name]: e.target.value,
         });
       };
-    return <section className={styles.contact} id='contact'>
+    return <section className={styles.contact} id='contact' data-aos="fade-up">
             <h2 className={styles.contact__title}>Contact</h2>
         <div className={styles.contact__box}>
         <p>
@@ -100,7 +100,7 @@ function Contact(){
             <div className={styles['contact__form-button']}><button disabled={isLoading}>{isLoading ? 'Sending' : 'Submit'}</button></div>
             </form>
         </div>
-        {showModal && <Modal closeModal={hideModalHandler} title={title} message={message} showModal={showModal} />}
+        {showModal && <Modal closeModal={hideModalHandler} title={title} message={message}/>}
     </section>
 }
 export default Contact;

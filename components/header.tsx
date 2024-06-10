@@ -9,6 +9,8 @@ function Header() {
 	const [animateChain, setAnimateChain] = useState(false);
 	const [destroyLight, setDestroyLight] = useState([]);
 
+	const name = "JAKUBCZEKANSKI".split("");
+	
 	function destroyLightHandler(light: string) {
 		setDestroyLight((prevLights) => ({
 			...prevLights,
@@ -30,7 +32,7 @@ function Header() {
 		}));
 	};
 	return (
-		<header className={styles.header}>
+		<header className={styles.header} id="home">
 			<div className={styles.header__content}>
 				<div>
 					<p className={styles["header__content-p"]}>Hello, my name is</p>
@@ -123,7 +125,7 @@ function Header() {
 						</span>
 					</h2>
 					<p className={styles["header__content-p"]}>
-						Aspiring Front-end Developer
+						Freelance Front-end Developer
 					</p>
 				</div>
 

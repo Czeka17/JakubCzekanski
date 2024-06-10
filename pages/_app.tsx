@@ -4,14 +4,18 @@ import FontFaceObserver from 'fontfaceobserver';
 import LoadingScreen from '@/components/LoadingScreen';
 import '../public/globals.css';
 import styles from './animations.module.scss';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const [appLoading, setAppLoading] = useState(true);
   const [delayedTransition, setDelayedTransition] = useState(false);
 
   useEffect(() => {
+    AOS.init();
     const loadFonts = async () => {
       const font = new FontFaceObserver('Poppins');
+
+
 
       try {
         await font.load();

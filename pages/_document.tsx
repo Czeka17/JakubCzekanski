@@ -14,12 +14,12 @@ export default function Document() {
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-
       </Head>
       <body>
         <Main />
         <NextScript />
       </body>
+      
     </Html>
   )
 }
